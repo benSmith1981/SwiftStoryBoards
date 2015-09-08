@@ -7,7 +7,7 @@
 //
 import UIKit
 import Foundation
-class PlayersViewController: UITableViewController {
+class PlayersViewController: UITableViewController,  PlayerDetailViewControllerDelegate{
     @IBOutlet var playersTableView: UITableView!
     var players: NSMutableArray = []
     
@@ -46,5 +46,25 @@ class PlayersViewController: UITableViewController {
         
         let row = indexPath.row
         println(players[row])
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PlayerDetailModalSegue"{
+            let navigationController = segue.destinationViewController as? UINavigationController
+            let addItemViewController = navigationController?.topViewController as? PlayersDetailViewController
+            
+            if let viewController = addItemViewController {
+                viewController.delegate = self
+            }
+        }
+    }
+    
+    //PlayerDetailsViewControllerDelegate
+    func playerDetailsViewControllerDidCancel(controller: PlayersDetailViewController){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func playerDetailsViewControllerDidSave(controller: PlayersDetailViewController){
+        
     }
 }

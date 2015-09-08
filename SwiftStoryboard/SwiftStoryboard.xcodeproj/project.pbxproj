@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		90DAE36C1B9A44BB009AAD33 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 90DAE36B1B9A44BB009AAD33 /* Images */; };
 		90DAE3701B9C656B009AAD33 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DAE36F1B9C656B009AAD33 /* PlayersViewController.swift */; };
 		90DAE3721B9C6CF5009AAD33 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DAE3711B9C6CF5009AAD33 /* Player.swift */; };
+		90DAE3741B9EBFD8009AAD33 /* PlayersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DAE3731B9EBFD8009AAD33 /* PlayersDetailViewController.swift */; };
 		90DB5F151B97856B0044A3CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DB5F141B97856B0044A3CE /* AppDelegate.swift */; };
 		90DB5F1A1B97856B0044A3CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90DB5F181B97856B0044A3CE /* Main.storyboard */; };
 		90DB5F1C1B97856B0044A3CE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90DB5F1B1B97856B0044A3CE /* Images.xcassets */; };
@@ -28,9 +28,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		90DAE36B1B9A44BB009AAD33 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Images; path = ../../../../Downloads/Images; sourceTree = "<group>"; };
 		90DAE36F1B9C656B009AAD33 /* PlayersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		90DAE3711B9C6CF5009AAD33 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		90DAE3731B9EBFD8009AAD33 /* PlayersDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayersDetailViewController.swift; sourceTree = "<group>"; };
 		90DB5F0F1B97856B0044A3CE /* SwiftStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90DB5F131B97856B0044A3CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90DB5F141B97856B0044A3CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,9 +81,9 @@
 		90DB5F111B97856B0044A3CE /* SwiftStoryboard */ = {
 			isa = PBXGroup;
 			children = (
-				90DAE36B1B9A44BB009AAD33 /* Images */,
 				90DB5F141B97856B0044A3CE /* AppDelegate.swift */,
 				90DAE36F1B9C656B009AAD33 /* PlayersViewController.swift */,
+				90DAE3731B9EBFD8009AAD33 /* PlayersDetailViewController.swift */,
 				90DAE3711B9C6CF5009AAD33 /* Player.swift */,
 				90DB5F181B97856B0044A3CE /* Main.storyboard */,
 				90DB5F1B1B97856B0044A3CE /* Images.xcassets */,
@@ -198,7 +198,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90DAE36C1B9A44BB009AAD33 /* Images in Resources */,
 				90DB5F1A1B97856B0044A3CE /* Main.storyboard in Resources */,
 				90DB5F1F1B97856B0044A3CE /* LaunchScreen.xib in Resources */,
 				90DB5F1C1B97856B0044A3CE /* Images.xcassets in Resources */,
@@ -221,6 +220,7 @@
 			files = (
 				90DAE3721B9C6CF5009AAD33 /* Player.swift in Sources */,
 				90DB5F151B97856B0044A3CE /* AppDelegate.swift in Sources */,
+				90DAE3741B9EBFD8009AAD33 /* PlayersDetailViewController.swift in Sources */,
 				90DAE3701B9C656B009AAD33 /* PlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
