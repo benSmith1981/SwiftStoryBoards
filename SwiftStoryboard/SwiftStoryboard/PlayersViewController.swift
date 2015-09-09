@@ -27,7 +27,7 @@ class PlayersViewController: UITableViewController,  PlayerDetailViewControllerD
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var CellIdentifier: String = "PlayerCell\(indexPath.row)"
+        var CellIdentifier: String = "PlayerCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         let row = indexPath.row
         let player: Player = players[row] as! Player
@@ -64,7 +64,8 @@ class PlayersViewController: UITableViewController,  PlayerDetailViewControllerD
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func playerDetailsViewControllerDidSave(controller: PlayersDetailViewController){
+    func playerDetailsViewControllerDidSave(controller: PlayersDetailViewController, player:Player){
+        players.addObject(player)
         
     }
 }
