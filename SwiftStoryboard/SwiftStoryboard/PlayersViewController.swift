@@ -66,6 +66,8 @@ class PlayersViewController: UITableViewController,  PlayerDetailViewControllerD
     
     func playerDetailsViewControllerDidSave(controller: PlayersDetailViewController, player:Player){
         players.addObject(player)
-        
+        let indexPath = NSIndexPath(forRow: players.count-1, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Left)
+        self.dismissViewControllerAnimated(true, completion:nil)
     }
 }

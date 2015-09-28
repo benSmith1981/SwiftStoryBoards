@@ -14,9 +14,10 @@ protocol PlayerDetailViewControllerDelegate{
     func playerDetailsViewControllerDidSave(controller: PlayersDetailViewController, player:Player)
 }
 
-class PlayersDetailViewController: UITableViewController {
+class PlayersDetailViewController: UITableViewController, GamePickerViewControllerDelegate{
 
     var delegate: PlayerDetailViewControllerDelegate?
+    var game: String = "Chess"
     
     @IBOutlet weak var detailLabel: UILabel!
     @IBOutlet weak var nameTextField: UITextField!
@@ -29,6 +30,19 @@ class PlayersDetailViewController: UITableViewController {
         if indexPath.row == 0{
             nameTextField.becomeFirstResponder()
         }
+    }
+
+    // MARK: Methods called upon opening and closing view
+    override func viewDidLoad() {
+        self.detailLabel.text = game
+    }
+    
+    override func awakeFromNib() {
+        NSLog("init PlayerDetailsViewController");
+    }
+    
+    deinit{
+        NSLog("dealloc PlayerDetailsViewController");
     }
     
     // MARK: IBaction methods
@@ -44,6 +58,25 @@ class PlayersDetailViewController: UITableViewController {
         if let delegate = self.delegate {
             delegate.playerDetailsViewControllerDidSave(self, player: player)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "PickGame"{
+            let navigationController = segue.destinationViewController as? GamePickerViewController
+//            let addItemViewController = navigationController as GamePickerViewController
+            if let viewcontroller = navigationController{
+                viewcontroller.delegate = self
+                viewcontroller.game = game
+            }
+        }
+    }
+    
+    //MARK: GamePickerViewControllerDelegate
+    func gamePickerViewController(controller: GamePickerViewController, game:String){
+        self.game = game
+        self.detailLabel.text = self.game
+        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }
